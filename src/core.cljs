@@ -1,5 +1,12 @@
-(ns core)
+(ns core
+  (:require [reagent.core :as r]))
 
-(defn main
+(defn app
   []
-  (println "Hello world"))
+  [:p "Hello World"])
+
+(defn ^:export main
+  []
+  (r/render
+    [app]
+    (.getElementById js/document "app")))
