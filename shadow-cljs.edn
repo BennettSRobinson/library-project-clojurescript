@@ -3,7 +3,10 @@
 
  :dependencies [[binaryage/devtools "0.9.10"]
                 [proto-repl "0.3.1"]
-                [reagent "0.8.0"]]
+                [reagent "0.8.0"]
+                [metosin/reitit "0.5.11"]
+                [metosin/reitit-spec "0.5.11"]
+                [metosin/reitit-frontend "0.5.11"]]
 
  :nrepl        {:port 3333}
 
