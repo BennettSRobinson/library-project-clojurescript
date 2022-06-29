@@ -1,4 +1,4 @@
-(ns core
+(ns library.core
   (:require [reagent.core :as r]))
 
 (defn app

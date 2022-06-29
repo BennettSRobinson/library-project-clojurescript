@@ -14,9 +14,9 @@
 
         :modules
         {:main
-         {:entries [core]}}
+         {:entries [library.core]}}
 
         :devtools
-        {:after-load  core/main
+        {:after-load  library.core/main
          :http-root   "public"
          :http-port   3001}}}}
