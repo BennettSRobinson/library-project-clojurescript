@@ -8,6 +8,7 @@
                 [metosin/reitit-spec "0.5.11"]
                 [metosin/reitit-frontend "0.5.11"]]
 
+
  :nrepl        {:port 3333}
 
  :builds

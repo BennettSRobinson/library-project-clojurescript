@@ -1,12 +1,15 @@
 (ns library.core
-  (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [library.pages.home :refer [home]]
+            [library.errBoundary :refer [err-boundary]]))
 
 (defn app
   []
-  [:p "Hello World"])
+  [home])
 
 (defn ^:export main
   []
   (r/render
-    [app]
+    [err-boundary
+     [app]]
     (.getElementById js/document "app")))
