@@ -1,11 +1,15 @@
 (ns library.core
   (:require [reagent.core :as r]
             [library.pages.home :refer [home]]
+            [library.components.footer :refer [footer]]
             [library.errBoundary :refer [err-boundary]]))
 
 (defn app
   []
-  [home])
+  [:div
+   [home]
+   [footer]])
+
 
 (defn ^:export main
   []
