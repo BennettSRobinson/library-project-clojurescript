@@ -1,0 +1,121 @@
+@import "../node_modules/normalize.scss/normalize";
+$backColor: gray;
+
+//Default media query max-width: 1200px
+@media only screen and (max-width: 1200px),
+  only screen and (max-height: 1025px) {
+  body {
+    background-color: #5596e6;
+  }
+  .second_btn {
+    &--hidden {
+      display: none;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 3%;
+  }
+
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid black;
+    height: 730px;
+  }
+  .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 300px;
+    padding: 18px 18px;
+    margin: 18px 29px;
+    border: 1px solid black;
+    box-shadow: inset 0px 2px 2px black, inset 0px -2px 2px black;
+
+    &__picture {
+      display: flex;
+      justify-content: center;
+      object-fit: center;
+      width: 200px;
+      &__container {
+        display: inherit;
+        height: 200px;
+      }
+    }
+
+    &__details {
+      margin: 10px 0 0 0;
+      white-space: nowrap;
+      font-size: 12pt;
+    }
+  }
+}
+
+@media only screen and (max-width: 1020px), only screen and(max-height:769px) {
+  .title {
+    font-size: 12;
+  }
+}
+
+@media only screen and (max-height: 375px), only screen and (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+  main {
+    height: 100%;
+  }
+
+  .title {
+    font-size: 18pt;
+    margin-left: 16%;
+  }
+  .main {
+    padding-left: 40px;
+    margin-top: 10px;
+  }
+  .book {
+    width: 300px;
+    height: 350px;
+    &__picture {
+      width: 260px;
+      &__container {
+        height: 260px;
+      }
+    }
+  }
+  .second_btn {
+    &--hidden {
+      padding: 18px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__search {
+      width: 60%;
+      border: solid 1px black;
+      padding: 9px 10px 9px 32px;
+      border-radius: 2rem;
+    }
+    &__submit {
+      width: 20%;
+      padding: 9px 10px 9px;
+      border-radius: 2rem;
+      background: turquoise;
+    }
+  }
+}
