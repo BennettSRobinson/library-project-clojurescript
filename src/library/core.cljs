@@ -10,7 +10,7 @@
   [:div
    [header]
    (let [current-view (-> @routes-state :data :view)]
-     [current-view])
+     [current-view @routes-state])
    [footer]])
 
 

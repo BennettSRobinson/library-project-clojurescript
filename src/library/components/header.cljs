@@ -12,4 +12,4 @@
      [:li.navBar__list__item
       [:a.navBar__tab {:href (rfe/href :routes/bookshelf)} "Bookshelf"]]
      [:li.navBar__list__item
-      [:a.navBar__tab "Add Book"]]]]])
+      [:a.navBar__tab {:href (rfe/href :routes/add)} "Add Book"]]]]])
