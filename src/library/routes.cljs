@@ -10,6 +10,7 @@
             [library.pages.bookshelf :refer [bookshelf]]
             [library.pages.add :refer [add-book]]
             [library.pages.details :refer [bookDetails]]
+            [library.pages.edit :refer [edit-book]]
             ;;state
             [library.store.actions :as actions]
             [library.store.state :as state]))
@@ -29,9 +30,16 @@
                  :view #'bookDetails
                  :controllers [{:parameters {:path [:id]}
                                 :start (fn [parameters]
-                                         (actions/getBook (-> parameters :path :id))
-                                         (js/console.log @state/current-book))
-                                :stop (fn [parameters] (js/console.log "item stop" (-> parameters :path :id)))}]}]])
+                                         (actions/getBook (-> parameters :path :id)))
+                                :stop (fn [parameters]
+                                        (reset! state/current-book {}))}]}]
+   ["/edit/:id" {:name :routes/edit
+                 :view #'edit-book
+                 :controllers [{:parameters {:path [:id]}
+                                :start (fn [parameters]
+                                         (actions/getBook (-> parameters :path :id)))
+                                :stop (fn [parameters]
+                                        (reset! state/current-book {}))}]}]])
 (defn router-start! []
   (rfe/start!
    (rf/router routes {:data {:coercion rss/coercion}})
