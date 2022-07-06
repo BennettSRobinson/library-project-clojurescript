@@ -13,7 +13,7 @@
            makes a major appearance. The story is written in a documentary style, with
            three independent narratives linked together by the device of a narrator
            discovering notes left by a deceased relative."
-                      :picture "css/assets/pics/CallOfCthulhu.jpg"
+                      :image "css/assets/pics/CallOfCthulhu.jpg"
                       :published "November 1919"
                       :pages 4}
 
@@ -28,6 +28,6 @@ oceans. He is first introduced in Lovecraft's short story 'Dagon;', and is
 mentioned extensively throughout the mythos. Also known as Father Dagon and the
 consort of Mother Hydra, although they are Deities, they are generally not
 considered Great Old Ones."
-                     :picture ""
+                     :image ""
                      :published "07/02/1919"
                      :pages 4})))

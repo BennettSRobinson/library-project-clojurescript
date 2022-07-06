@@ -3,10 +3,17 @@
             [reagent.core :as r]
             [library.store.actions :as actions]))
 
+
 (defn add! [event localState]
   (.preventDefault event)
   (actions/addBook localState)
   (rfe/push-state :routes/bookshelf))
+
+(defn addImage! [event state]
+  (let [^js/File file (-> event .-target .-files (aget 0))]
+    (swap! state assoc :preview (.. js/window -URL (createObjectURL file)))
+    (swap! state assoc :image (:preview @state))
+    (set! (-> event .-target .-value) "")))
 
 (defn add-book
   []
@@ -16,7 +23,8 @@
                        :summary ""
                        :published ""
                        :pages 0
-                       :image empty}
+                       :preview empty
+                       :image ""}
         state (r/atom initial-state)]
     (fn []
       [:main.mainAdd
@@ -68,13 +76,15 @@
               :placeholder 0}]]]]]
         [:article.addBook__wrapper.addBook__wrapper--second
          [:div.container
-          [:img.container__img {:src (:image @state)}]]
+          [:img.container__img {:src (:preview @state)}]]
          [:div.container__button
-          [:button "Add Image"]
+          [:button
+           {:on-click #(.click (js/document.getElementById "getFile"))} "Add Image"]
           [:input
            {:id "getFile"
             :type :file
-            :style {:visibility "hidden"}}]]]]
+            :style {:visibility "hidden"}
+            :on-change #(addImage! % state)}]]]]
        [:div.buttons-Wrapper
         [:button.buttons-Wrapper__btns.buttons-Wrapper__btns--edit {:type :submit
                                                                     :on-click #(add! % @state) } "Add Book"]

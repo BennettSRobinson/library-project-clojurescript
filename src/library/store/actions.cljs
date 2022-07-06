@@ -3,5 +3,5 @@
 
 (defn addBook
   [book]
-  (let [newBook (assoc book :id (+ (count @state/db) 1))]
+  (let [newBook (dissoc (assoc book :id (+ (count @state/db) 1)) :preview)]
     (swap! state/db conj newBook)))
