@@ -7,7 +7,7 @@
    [:article
     [:h1.title "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"]]
    [:section.main
-    (for [{:keys [id author title picture]} (vals @state/db)]
+    (for [{:keys [id author title picture]} @state/db]
       [:a.book {:key id}
        [:div.book__picture__container
         [:img.book__picture {:src picture :alt title}]]

@@ -1,18 +1,22 @@
 (ns library.pages.add
   (:require [reitit.frontend.easy :as rfe]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [library.store.actions :as actions]))
 
-(defn add! [event state]
+(defn add! [event localState]
   (.preventDefault event)
+  (actions/addBook localState)
   (rfe/push-state :routes/bookshelf))
 
 (defn add-book
   []
-  (let [initial-state {:title ""
+  (let [empty "/css/assets/pics/empty.jpeg"
+        initial-state {:title ""
                        :author ""
                        :summary ""
                        :published ""
-                       :pages 0}
+                       :pages 0
+                       :image empty}
         state (r/atom initial-state)]
     (fn []
       [:main.mainAdd
@@ -64,7 +68,7 @@
               :placeholder 0}]]]]]
         [:article.addBook__wrapper.addBook__wrapper--second
          [:div.container
-          [:img.container__img {:src "/css/assets/pics/empty.jpeg"}]]
+          [:img.container__img {:src (:image @state)}]]
          [:div.container__button
           [:button "Add Image"]
           [:input
