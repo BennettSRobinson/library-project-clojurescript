@@ -1,5 +1,5 @@
 (ns library.pages.bookshelf
-  (:require [library.state :as state]))
+  (:require [library.store.state :as state]))
 
 (defn bookshelf
   []

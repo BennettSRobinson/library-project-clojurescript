@@ -64,7 +64,13 @@
               :placeholder 0}]]]]]
         [:article.addBook__wrapper.addBook__wrapper--second
          [:div.container
-          [:img.container__img {:src "/css/assets/pics/empty.jpeg"}]]]]
+          [:img.container__img {:src "/css/assets/pics/empty.jpeg"}]]
+         [:div.container__button
+          [:button "Add Image"]
+          [:input
+           {:id "getFile"
+            :type :file
+            :style {:visibility "hidden"}}]]]]
        [:div.buttons-Wrapper
         [:button.buttons-Wrapper__btns.buttons-Wrapper__btns--edit {:type :submit
                                                                     :on-click #(add! % @state) } "Add Book"]

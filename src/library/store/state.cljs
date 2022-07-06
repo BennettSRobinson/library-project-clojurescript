@@ -1,4 +1,4 @@
-(ns library.state
+(ns library.store.state
   (:require [reagent.core :as r]))
 
 (def db (r/atom {
@@ -15,8 +15,8 @@
            discovering notes left by a deceased relative."
                            :picture "css/assets/pics/CallOfCthulhu.jpg"
                            :published "November 1919"
-                           :pages 4
-                           :rating 4}
+                           :pages 4}
+
                  :book-2 {
 
                            :id :book-2
@@ -30,5 +30,4 @@ consort of Mother Hydra, although they are Deities, they are generally not
 considered Great Old Ones."
                           :picture ""
                           :published "07/02/1919"
-                          :pages 4
-                          :rating 5}}))
+                          :pages 4}}))
