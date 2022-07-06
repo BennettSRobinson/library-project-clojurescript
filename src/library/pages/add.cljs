@@ -4,7 +4,7 @@
             [library.store.actions :as actions]))
 
 
-(defn add! [event localState]
+(defn addBook! [event localState]
   (.preventDefault event)
   (actions/addBook localState)
   (rfe/push-state :routes/bookshelf))
@@ -87,5 +87,5 @@
             :on-change #(addImage! % state)}]]]]
        [:div.buttons-Wrapper
         [:button.buttons-Wrapper__btns.buttons-Wrapper__btns--edit {:type :submit
-                                                                    :on-click #(add! % @state) } "Add Book"]
+                                                                    :on-click #(addBook! % @state) } "Add Book"]
         [:button.buttons-Wrapper__btns {:on-click #(rfe/push-state :routes/bookshelf)}"Cancel"]]])))
