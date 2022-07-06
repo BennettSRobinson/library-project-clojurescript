@@ -1,9 +1,11 @@
 (ns library.store.state
   (:require [reagent.core :as r]))
 
-(def db (r/atom '(
+(def current-book (r/atom {}))
+
+(def db (r/atom [
                     {
-                      :id :book-1
+                      :id 1
                       :author "H.P Lovecraft"
                       :title "Call of Cthulhu"
                       :summary "'The Call of Cthulhu' is a short story by
@@ -13,13 +15,13 @@
            makes a major appearance. The story is written in a documentary style, with
            three independent narratives linked together by the device of a narrator
            discovering notes left by a deceased relative."
-                      :image "css/assets/pics/CallOfCthulhu.jpg"
+                      :image "/css/assets/pics/CallOfCthulhu.jpg"
                       :published "November 1919"
                       :pages 4}
 
                     {
 
-                      :id :book-2
+                      :id 2
                       :author "Keith Davidson"
                       :title "Dagon"
                       :summary "'Dagon is a deity who presides over the
@@ -30,4 +32,4 @@ consort of Mother Hydra, although they are Deities, they are generally not
 considered Great Old Ones."
                      :image ""
                      :published "07/02/1919"
-                     :pages 4})))
+                     :pages 4}]))

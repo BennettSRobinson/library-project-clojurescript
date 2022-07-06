@@ -133,6 +133,9 @@ $mainColor: turquoise;
       &--edit {
         background: darken($mainColor, 30%);
       }
+      &--delete {
+        background: red;
+      }
     }
   }
 }
