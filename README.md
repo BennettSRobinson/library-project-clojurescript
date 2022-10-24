@@ -10,6 +10,7 @@ The library project has the crud functions of creating, adding, editing, and vie
 
 ## Tech Stack
 - reagent framework
-- ritit for routing
+- reitit for routing
 - SCSS
+- shadow-cljs for running the application
 
